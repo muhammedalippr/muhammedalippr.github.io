@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muhammed Ali | Developer Portfolio</title>
-    <meta name="description" content="Official developer portal and applications by Muhammed Ali.">
+    <title>Muhammed Ali | Official App Developer</title>
+    <meta name="description" content="Official developer portfolio of Muhammed Ali (Muhammed Ali Yamaani / Mekkuth) - Discover Islamic, educational, and utility applications on Google Play.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
@@ -14,6 +14,7 @@
             --surface: rgba(255, 255, 255, 0.03);
             --surface-hover: rgba(255, 255, 255, 0.06);
             --border: rgba(255, 255, 255, 0.08);
+            --border-hover: rgba(16, 185, 129, 0.4);
             --primary: #10b981;
             --primary-glow: rgba(16, 185, 129, 0.35);
             --text-main: #f8fafc;
@@ -43,19 +44,19 @@
         /* Ambient Glow Background */
         .ambient-glow {
             position: fixed;
-            top: -150px;
+            top: -160px;
             left: 50%;
             transform: translateX(-50%);
-            width: 700px;
-            height: 450px;
-            background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, rgba(6, 78, 59, 0.05) 50%, transparent 70%);
+            width: 800px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.16) 0%, rgba(6, 78, 59, 0.05) 50%, transparent 70%);
             z-index: 0;
             pointer-events: none;
         }
 
         .container {
             width: 100%;
-            max-width: 900px;
+            max-width: 980px;
             position: relative;
             z-index: 1;
         }
@@ -67,23 +68,23 @@
         }
 
         .avatar {
-            width: 88px;
-            height: 88px;
-            border-radius: 28px;
+            width: 92px;
+            height: 92px;
+            border-radius: 30px;
             background: linear-gradient(135deg, #10b981 0%, #047857 100%);
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 12px 35px var(--primary-glow);
+            box-shadow: 0 14px 40px var(--primary-glow);
             margin-bottom: 1.5rem;
             border: 1px solid rgba(255, 255, 255, 0.2);
-            font-size: 2rem;
+            font-size: 2.2rem;
             font-weight: 800;
             color: #ffffff;
         }
 
         h1 {
-            font-size: 2.2rem;
+            font-size: 2.4rem;
             font-weight: 800;
             letter-spacing: -0.5px;
             margin-bottom: 0.5rem;
@@ -92,14 +93,14 @@
         .subtitle {
             color: var(--text-muted);
             font-size: 1.05rem;
-            max-width: 500px;
-            margin: 0 auto 1.5rem;
-            line-height: 1.5;
+            max-width: 580px;
+            margin: 0 auto 1.6rem;
+            line-height: 1.6;
         }
 
         .badge-row {
             display: flex;
-            gap: 0.5rem;
+            gap: 0.6rem;
             justify-content: center;
             flex-wrap: wrap;
         }
@@ -107,9 +108,9 @@
         .badge {
             background: var(--surface);
             border: 1px solid var(--border);
-            padding: 0.35rem 0.85rem;
+            padding: 0.4rem 0.95rem;
             border-radius: 20px;
-            font-size: 0.8rem;
+            font-size: 0.82rem;
             font-weight: 600;
             color: var(--primary);
             letter-spacing: 0.3px;
@@ -117,28 +118,50 @@
 
         /* Section Titles */
         .section-title {
-            font-size: 1.25rem;
+            font-size: 1.3rem;
             font-weight: 700;
-            margin-bottom: 1.25rem;
+            margin-bottom: 1.5rem;
             display: flex;
             align-items: center;
-            gap: 0.6rem;
+            justify-content: space-between;
             color: #ffffff;
         }
 
-        .section-title::before {
+        .section-title-left {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .section-title-left::before {
             content: "";
             width: 4px;
-            height: 18px;
+            height: 20px;
             background: var(--primary);
             border-radius: 4px;
             display: inline-block;
         }
 
-        /* App Cards Grid */
+        .dev-link {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            transition: opacity 0.2s;
+        }
+
+        .dev-link:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        /* Apps Grid */
         .apps-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
             gap: 1.25rem;
             margin-bottom: 3.5rem;
         }
@@ -162,7 +185,7 @@
 
         .app-card:hover {
             transform: translateY(-4px);
-            border-color: rgba(16, 185, 129, 0.4);
+            border-color: var(--border-hover);
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 20px rgba(16, 185, 129, 0.1);
         }
 
@@ -177,7 +200,7 @@
             width: 52px;
             height: 52px;
             border-radius: 14px;
-            background: #1e2330;
+            background: #181b26;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -190,19 +213,22 @@
             font-size: 1.15rem;
             font-weight: 700;
             color: #ffffff;
-            margin-bottom: 0.15rem;
+            margin-bottom: 0.2rem;
         }
 
         .app-meta span {
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             color: var(--primary);
             font-weight: 600;
+            background: rgba(16, 185, 129, 0.1);
+            padding: 2px 8px;
+            border-radius: 6px;
         }
 
         .app-card p {
             color: var(--text-muted);
-            font-size: 0.9rem;
-            line-height: 1.5;
+            font-size: 0.88rem;
+            line-height: 1.55;
             margin-bottom: 1.25rem;
         }
 
@@ -231,7 +257,7 @@
             background: var(--surface);
             border: 1px solid var(--border);
             border-radius: 18px;
-            padding: 1.25rem 1.5rem;
+            padding: 1.3rem 1.6rem;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -244,6 +270,7 @@
             font-size: 0.95rem;
             font-weight: 700;
             margin-bottom: 0.2rem;
+            color: #fff;
         }
 
         .verification-info p {
@@ -254,17 +281,18 @@
         .verification-link {
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid var(--border);
-            padding: 0.5rem 1rem;
+            padding: 0.55rem 1.1rem;
             border-radius: 12px;
             color: var(--primary);
-            font-size: 0.82rem;
+            font-size: 0.85rem;
             font-weight: 600;
             text-decoration: none;
-            transition: background 0.2s ease;
+            transition: all 0.2s ease;
         }
 
         .verification-link:hover {
             background: rgba(16, 185, 129, 0.15);
+            border-color: var(--primary);
         }
 
         /* Footer */
@@ -288,7 +316,7 @@
         }
 
         @media (max-width: 600px) {
-            h1 { font-size: 1.8rem; }
+            h1 { font-size: 1.85rem; }
             .subtitle { font-size: 0.95rem; }
             .apps-grid { grid-template-columns: 1fr; }
         }
@@ -302,19 +330,25 @@
         <header>
             <div class="avatar">M</div>
             <h1>Muhammed Ali</h1>
-            <p class="subtitle">Mobile Application Developer creating clean, purposeful Islamic & educational digital experiences.</p>
+            <p class="subtitle">Creator & Developer of purpose-driven Islamic education platforms, Quran memorization tools, and Malayalam utilities.</p>
             <div class="badge-row">
                 <span class="badge">Google Play Developer</span>
-                <span class="badge">Flutter & Capacitor</span>
+                <span class="badge">Muhammed Ali Yamaani</span>
                 <span class="badge">Kerala, India</span>
             </div>
         </header>
 
         <!-- Featured Applications -->
-        <div class="section-title">Published Applications</div>
+        <div class="section-title">
+            <div class="section-title-left">Featured Applications</div>
+            <a href="https://play.google.com/store/apps/developer?id=Muhammed+ali+Yamaani" target="_blank" rel="noopener" class="dev-link">
+                View Play Store Profile &rarr;
+            </a>
+        </div>
+
         <div class="apps-grid">
             
-            <!-- Easy Quran Hifz -->
+            <!-- 1. Easy Quran Hifz -->
             <a href="https://play.google.com/store/apps/details?id=com.easyquranhifz.app" target="_blank" rel="noopener" class="app-card">
                 <div>
                     <div class="app-card-top">
@@ -324,28 +358,100 @@
                             <span>Quran Memorization</span>
                         </div>
                     </div>
-                    <p>Structured Ayah-by-Ayah memorization tool with repetitive playback, cumulative recaps, and world-class reciters.</p>
+                    <p>Structured Ayah-by-Ayah Quran memorization companion with repetitive audio loops, cumulative recaps, and world-class reciters.</p>
                 </div>
                 <div class="app-action">
-                    View on Google Play
+                    Get on Google Play
                     <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </div>
             </a>
 
-            <!-- Madrasa Time -->
-            <a href="https://madrasatime.com" target="_blank" rel="noopener" class="app-card">
+            <!-- 2. Madrasa time (EK) -->
+            <a href="https://play.google.com/store/apps/developer?id=Muhammed+ali+Yamaani" target="_blank" rel="noopener" class="app-card">
                 <div>
                     <div class="app-card-top">
                         <div class="app-icon">🕌</div>
                         <div class="app-meta">
-                            <h3>Madrasa Time</h3>
-                            <span>Educational Portal</span>
+                            <h3>Madrasa time (EK)</h3>
+                            <span>Education & Tools</span>
                         </div>
                     </div>
-                    <p>Comprehensive digital education and scheduling platform for students and educators.</p>
+                    <p>All-in-one educational platform for SKIMVB madrasa students & teachers featuring textbooks, audio, question papers, and study notes.</p>
                 </div>
                 <div class="app-action">
-                    Visit Website
+                    Get on Google Play
+                    <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+            </a>
+
+            <!-- 3. Muslim Baby Names - Malayalam -->
+            <a href="https://play.google.com/store/apps/developer?id=Muhammed+ali+Yamaani" target="_blank" rel="noopener" class="app-card">
+                <div>
+                    <div class="app-card-top">
+                        <div class="app-icon">👶</div>
+                        <div class="app-meta">
+                            <h3>Muslim Baby Names</h3>
+                            <span>Islamic Reference</span>
+                        </div>
+                    </div>
+                    <p>Comprehensive directory of meaningful Islamic boy and girl names with authentic meanings in Malayalam and Arabic calligraphy.</p>
+                </div>
+                <div class="app-action">
+                    Get on Google Play
+                    <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+            </a>
+
+            <!-- 4. Arabi Malayalam Keyboard -->
+            <a href="https://play.google.com/store/apps/developer?id=Muhammed+ali+Yamaani" target="_blank" rel="noopener" class="app-card">
+                <div>
+                    <div class="app-card-top">
+                        <div class="app-icon">⌨️</div>
+                        <div class="app-meta">
+                            <h3>Arabi Malayalam Keyboard</h3>
+                            <span>Productivity / Tools</span>
+                        </div>
+                    </div>
+                    <p>Custom keyboard tool facilitating typing in Arabi-Malayalam script with smart transliteration and character conversion.</p>
+                </div>
+                <div class="app-action">
+                    Get on Google Play
+                    <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+            </a>
+
+            <!-- 5. Kammu Sufi Moulid -->
+            <a href="https://play.google.com/store/apps/developer?id=Muhammed+ali+Yamaani" target="_blank" rel="noopener" class="app-card">
+                <div>
+                    <div class="app-card-top">
+                        <div class="app-icon">📿</div>
+                        <div class="app-meta">
+                            <h3>Kammu Sufi Moulid</h3>
+                            <span>Books & Reference</span>
+                        </div>
+                    </div>
+                    <p>Authentic collection of traditional Moulid texts, Adhkar, Baith, and daily devotional prayers in a clean, readable layout.</p>
+                </div>
+                <div class="app-action">
+                    Get on Google Play
+                    <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+            </a>
+
+            <!-- 6. Successline -->
+            <a href="https://play.google.com/store/apps/developer?id=Muhammed+ali+Yamaani" target="_blank" rel="noopener" class="app-card">
+                <div>
+                    <div class="app-card-top">
+                        <div class="app-icon">🎓</div>
+                        <div class="app-meta">
+                            <h3>Successline</h3>
+                            <span>Tuition & Learning</span>
+                        </div>
+                    </div>
+                    <p>Academic portal for parents and students to monitor real-time class attendance, test performance, and institutional announcements.</p>
+                </div>
+                <div class="app-action">
+                    Get on Google Play
                     <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </div>
             </a>
@@ -356,17 +462,18 @@
         <div class="verification-box">
             <div class="verification-info">
                 <h4>AdMob app-ads.txt Verification</h4>
-                <p>Official publisher validation file for Google AdMob advertising verification.</p>
+                <p>Official publisher validation file for Google AdMob advertising verification across all published applications.</p>
             </div>
             <a href="app-ads.txt" class="verification-link">View app-ads.txt</a>
         </div>
 
         <!-- Footer -->
         <footer>
-            <p>&copy; 2026 Muhammed Ali. All rights reserved.</p>
+            <p>&copy; 2026 Muhammed Ali (Muhammed ali Yamaani). All rights reserved.</p>
             <div style="margin-top: 0.8rem;">
-                <a href="https://muhammedalippr.github.io/easy-quran-hifz/privacy_policy.html">Privacy Policy</a> &bull;
+                <a href="https://muhammedalippr.github.io/easy-quran-hifz/privacy_policy.html">Easy Quran Hifz Privacy</a> &bull;
                 <a href="app-ads.txt">app-ads.txt</a> &bull;
+                <a href="https://play.google.com/store/apps/developer?id=Muhammed+ali+Yamaani" target="_blank" rel="noopener">Google Play Store</a> &bull;
                 <a href="https://github.com/muhammedalippr">GitHub</a>
             </div>
         </footer>
