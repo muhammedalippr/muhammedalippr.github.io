@@ -1,1 +1,375 @@
-<!DOCTYPE html><html><head><title>Developer Portal</title></head><body style='font-family:sans-serif;text-align:center;padding:50px;'><h1>Developer Portal</h1><p><a href='app-ads.txt'>app-ads.txt</a></p></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammed Ali | Developer Portfolio</title>
+    <meta name="description" content="Official developer portal and applications by Muhammed Ali.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #090a0f;
+            --surface: rgba(255, 255, 255, 0.03);
+            --surface-hover: rgba(255, 255, 255, 0.06);
+            --border: rgba(255, 255, 255, 0.08);
+            --primary: #10b981;
+            --primary-glow: rgba(16, 185, 129, 0.35);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --card-bg: rgba(18, 20, 29, 0.7);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            overflow-x: hidden;
+            padding: 2.5rem 1.25rem 4rem;
+        }
+
+        /* Ambient Glow Background */
+        .ambient-glow {
+            position: fixed;
+            top: -150px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 700px;
+            height: 450px;
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, rgba(6, 78, 59, 0.05) 50%, transparent 70%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header / Hero */
+        header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .avatar {
+            width: 88px;
+            height: 88px;
+            border-radius: 28px;
+            background: linear-gradient(135deg, #10b981 0%, #047857 100%);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 12px 35px var(--primary-glow);
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 2rem;
+            font-weight: 800;
+            color: #ffffff;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            max-width: 500px;
+            margin: 0 auto 1.5rem;
+            line-height: 1.5;
+        }
+
+        .badge-row {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 0.35rem 0.85rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--primary);
+            letter-spacing: 0.3px;
+        }
+
+        /* Section Titles */
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            color: #ffffff;
+        }
+
+        .section-title::before {
+            content: "";
+            width: 4px;
+            height: 18px;
+            background: var(--primary);
+            border-radius: 4px;
+            display: inline-block;
+        }
+
+        /* App Cards Grid */
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.25rem;
+            margin-bottom: 3.5rem;
+        }
+
+        .app-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 22px;
+            padding: 1.5rem;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .app-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(16, 185, 129, 0.4);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 20px rgba(16, 185, 129, 0.1);
+        }
+
+        .app-card-top {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .app-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            background: #1e2330;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            border: 1px solid var(--border);
+            flex-shrink: 0;
+        }
+
+        .app-meta h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 0.15rem;
+        }
+
+        .app-meta span {
+            font-size: 0.8rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .app-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 1.25rem;
+        }
+
+        .app-action {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .app-action svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+            transition: transform 0.2s ease;
+        }
+
+        .app-card:hover .app-action svg {
+            transform: translateX(4px);
+        }
+
+        /* Developer Verification Box */
+        .verification-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 1.25rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 3.5rem;
+        }
+
+        .verification-info h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 0.2rem;
+        }
+
+        .verification-info p {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+        }
+
+        .verification-link {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            padding: 0.5rem 1rem;
+            border-radius: 12px;
+            color: var(--primary);
+            font-size: 0.82rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.2s ease;
+        }
+
+        .verification-link:hover {
+            background: rgba(16, 185, 129, 0.15);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            border-top: 1px solid var(--border);
+            padding-top: 2rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        footer a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin: 0 0.5rem;
+            transition: color 0.2s;
+        }
+
+        footer a:hover {
+            color: var(--primary);
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8rem; }
+            .subtitle { font-size: 0.95rem; }
+            .apps-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="ambient-glow"></div>
+
+    <div class="container">
+        <!-- Header Profile -->
+        <header>
+            <div class="avatar">M</div>
+            <h1>Muhammed Ali</h1>
+            <p class="subtitle">Mobile Application Developer creating clean, purposeful Islamic & educational digital experiences.</p>
+            <div class="badge-row">
+                <span class="badge">Google Play Developer</span>
+                <span class="badge">Flutter & Capacitor</span>
+                <span class="badge">Kerala, India</span>
+            </div>
+        </header>
+
+        <!-- Featured Applications -->
+        <div class="section-title">Published Applications</div>
+        <div class="apps-grid">
+            
+            <!-- Easy Quran Hifz -->
+            <a href="https://play.google.com/store/apps/details?id=com.easyquranhifz.app" target="_blank" rel="noopener" class="app-card">
+                <div>
+                    <div class="app-card-top">
+                        <div class="app-icon">📖</div>
+                        <div class="app-meta">
+                            <h3>Easy Quran Hifz</h3>
+                            <span>Quran Memorization</span>
+                        </div>
+                    </div>
+                    <p>Structured Ayah-by-Ayah memorization tool with repetitive playback, cumulative recaps, and world-class reciters.</p>
+                </div>
+                <div class="app-action">
+                    View on Google Play
+                    <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+            </a>
+
+            <!-- Madrasa Time -->
+            <a href="https://madrasatime.com" target="_blank" rel="noopener" class="app-card">
+                <div>
+                    <div class="app-card-top">
+                        <div class="app-icon">🕌</div>
+                        <div class="app-meta">
+                            <h3>Madrasa Time</h3>
+                            <span>Educational Portal</span>
+                        </div>
+                    </div>
+                    <p>Comprehensive digital education and scheduling platform for students and educators.</p>
+                </div>
+                <div class="app-action">
+                    Visit Website
+                    <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+            </a>
+
+        </div>
+
+        <!-- Transparency & Ads Verification -->
+        <div class="verification-box">
+            <div class="verification-info">
+                <h4>AdMob app-ads.txt Verification</h4>
+                <p>Official publisher validation file for Google AdMob advertising verification.</p>
+            </div>
+            <a href="app-ads.txt" class="verification-link">View app-ads.txt</a>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2026 Muhammed Ali. All rights reserved.</p>
+            <div style="margin-top: 0.8rem;">
+                <a href="https://muhammedalippr.github.io/easy-quran-hifz/privacy_policy.html">Privacy Policy</a> &bull;
+                <a href="app-ads.txt">app-ads.txt</a> &bull;
+                <a href="https://github.com/muhammedalippr">GitHub</a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
